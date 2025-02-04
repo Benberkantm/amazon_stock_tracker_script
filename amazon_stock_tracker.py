@@ -87,7 +87,7 @@ def check_amazon_stock(url, retries=3):
 def load_cookies_from_chrome():
     options = Options()
     options.add_argument("--disable-blink-features=AutomationControlled")
-    options.add_argument("user-data-dir=C:/Users/suley/AppData/Local/Google/Chrome/User Data")  # Adjust the path as needed
+    options.add_argument(f"user-data-dir={os.path.expanduser('~')}/AppData/Local/Google/Chrome/User Data")  # Change this path to your Chrome profile
     driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
     driver.get("https://www.amazon.com")
     time.sleep(5)  # Wait for the page to load completely
